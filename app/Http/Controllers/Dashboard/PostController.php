@@ -9,13 +9,16 @@ use App\Models\Post;
 use App\Models\Category; // Add this line to import the Category class
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\View\View;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Response;
 
 class PostController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index():view
     {
         // $posts = Post::get();
         $posts = Post::paginate(2);
@@ -25,7 +28,7 @@ class PostController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create():view
     {
         $categories = Category::pluck('id','title');//trae solo los campos que necesito
 

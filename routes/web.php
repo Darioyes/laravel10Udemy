@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\Dashboard\PostController;
-use App\Http\Controllers\dashboard\TestController;
+use App\Http\Controllers\Dashboard\CategoryController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,3 +30,4 @@ Route::resource('post', PostController::class);//esto equivale a todas las rutas
 // Route::put('post/{post}', [PostController::class,'update']);
 // Route::delete('post/{post}', [PostController::class,'delete']);
 
+Route::resource('category', CategoryController::class);//esto equivale a todas las rutas de abajo
